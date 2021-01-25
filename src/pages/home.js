@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "@emotion/styled";
 import Layout from "../components/layout";
-import { css, keyframes } from "@emotion/react";
+import { css } from "@emotion/react";
 import { Link } from "gatsby";
-import { Container, Row, Col } from "react-bootstrap";
+import { Navbar, Nav, Container, Row, Col, NavLink } from "react-bootstrap";
 
 const TextContainer = styled("div")`
   display: flex;
@@ -29,8 +29,6 @@ const StyledHeader = styled("div")`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 7rem;
-  padding-bottom: 3rem;
 `;
 
 const StyledH1 = styled("h1")`
@@ -98,31 +96,12 @@ const StyledText = styled("p")`
   font-family: "Press Start 2P";
 `;
 
-const EnterContainer = styled("div")`
-  border: 3px solid white;
-`;
-
-export default function Landing() {
+export default function Home() {
   return (
     <Layout>
       <Container>
         <Row>
-          <Col>
-            <StyledHeader>
-              <StyledH1>Andrew Carrigan</StyledH1>
-              <StyledText>Jumping Down The JS RabbitHole</StyledText>
-            </StyledHeader>
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <TextContainer>
-              <StyledText>Press Enter to start</StyledText>
-              {/* <Link to="/home"> */}
-                <button>Enter</button>
-              {/* </Link> */}
-            </TextContainer>
-          </Col>
+            <Col>Hello world</Col>
         </Row>
       </Container>
     </Layout>

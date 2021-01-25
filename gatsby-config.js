@@ -25,5 +25,12 @@ module.exports = {
       },
       __key: "pages",
     },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`Exo`, `Oswald`, `Press Start 2P`],
+        display: "swap",
+      },
+    },
   ],
 };

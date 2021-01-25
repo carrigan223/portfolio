@@ -1,16 +1,8 @@
 import React from "react";
 import styled from "@emotion/styled";
-import Layout from "../components/layout";
-import { css, keyframes } from "@emotion/react";
+import { css } from "@emotion/react";
 import { Link } from "gatsby";
-import { Container, Row, Col } from "react-bootstrap";
-
-const TextContainer = styled("div")`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`;
+import { Navbar, Nav, Container, Row, Col, NavLink } from "react-bootstrap";
 
 const StyledHeader = styled("div")`
   /* Base font size */
@@ -29,8 +21,6 @@ const StyledHeader = styled("div")`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 7rem;
-  padding-bottom: 3rem;
 `;
 
 const StyledH1 = styled("h1")`
@@ -83,12 +73,12 @@ const StyledH1 = styled("h1")`
         0 0 4rem var(--neon-border-color),
         inset 0 0 4rem var(--neon-border-color);
     }
-    20%,
+    /* 20%,
     24%,
     55% {
       text-shadow: none;
       box-shadow: none;
-    }
+    } */
   }
 `;
 
@@ -98,33 +88,32 @@ const StyledText = styled("p")`
   font-family: "Press Start 2P";
 `;
 
-const EnterContainer = styled("div")`
-  border: 3px solid white;
-`;
-
-export default function Landing() {
+export default function Header() {
   return (
-    <Layout>
-      <Container>
-        <Row>
-          <Col>
-            <StyledHeader>
-              <StyledH1>Andrew Carrigan</StyledH1>
-              <StyledText>Jumping Down The JS RabbitHole</StyledText>
-            </StyledHeader>
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <TextContainer>
-              <StyledText>Press Enter to start</StyledText>
-              {/* <Link to="/home"> */}
-                <button>Enter</button>
-              {/* </Link> */}
-            </TextContainer>
-          </Col>
-        </Row>
-      </Container>
-    </Layout>
+    <>
+      <StyledHeader>
+        <StyledH1>Andrew Carrigan</StyledH1>
+        <StyledText>Jumping Down The JS RabbitHole</StyledText>
+        <Nav sticky="top" bg="dark" expand="lg">
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="ml-auto">
+              <NavLink to="/" activeClassName="current-page">
+                Home
+              </NavLink>
+              <NavLink to="/about" activeClassName="current-page">
+                About
+              </NavLink>
+              <NavLink to="/contact" activeClassName="current-page">
+                Contact
+              </NavLink>
+              <NavLink to="/tutorials" activeClassName="current-page">
+                Tutorials
+              </NavLink>
+            </Nav>
+          </Navbar.Collapse>
+        </Nav>
+      </StyledHeader>
+    </>
   );
 }
